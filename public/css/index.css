@@ -1,0 +1,77 @@
+main {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    margin-top: 80px;
+}
+
+main article{
+    position: relative;
+}
+
+main article::before{
+    content: "";
+    padding-bottom: 100%;
+    display: block;
+}
+
+main article:hover a,
+main article:hover button
+{
+    opacity: 1;
+}
+
+main article h2 {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;    
+    font-size: 1.5rem;
+    cursor: default;
+    color: black;
+}
+
+main article span {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFF;
+    padding: 5px;
+    cursor: default;    
+}
+
+main article a {
+    padding: 10px 20px;
+    background-color: rgb(46, 130, 255);
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    text-decoration: none;
+    color: #FFF;
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+main article button {
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+main article img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

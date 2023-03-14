@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/geral.css">
+        <link rel="stylesheet" href="/css/pizza.css">
+        <title>Pizzaria Fantástica</title>
+    </head>
+
+    <body>
+        <header>
+            <a href="/">
+                <img src="/img/logo.svg" alt="Logo da Pizzaria Fantástica" width="64" height="64">
+            </a>
+            <input type="text" name="" id="campo-de-busca" placeholder="Qual pizza você procura?">
+            <button class="btBuscar">Buscar</button>
+            <a href="/carrinho">
+                <img src="" alt="">
+                <span>0</span>
+            </a>
+            <a href="">
+                <img src="" alt="">
+            </a>
+        </header>
+        <main>
+            <h1><%= pizza.nome %></h1>
+            <h2><%= pizza.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %></h2>
+            <img src=<%= pizza.img %> alt="Quatro Queijos">
+            <div>Ingredientes: <%= pizza.ingredientes.join(', ') %></div>
+            <form action="/pizzas/addCart" method="post">
+                <input type="hidden" name="aEscolhida" value="<%= pizza.id %>">
+                <button>+ Add</button>
+            </form>
+            <a href="/pizzas/" + <%= parseInt(pizza.id) -1 %>   class="prev">&lt;</a>
+            <a href="/pizzas/" + <%= parseInt(pizza.id) +1 %>  class="next">&gt;</a>
+        </main>
+        
+        
+    </body>
+
+</html>
